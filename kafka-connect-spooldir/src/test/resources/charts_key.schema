@@ -1,0 +1,11 @@
+{
+    "name" : "com.temasek.charts.model.Key",
+    "type" : "STRUCT",
+    "isOptional" : false,
+    "fieldSchemas" : {
+      "year" : {
+        "type" : "STRING",
+        "isOptional" : false
+      }
+    }
+  }

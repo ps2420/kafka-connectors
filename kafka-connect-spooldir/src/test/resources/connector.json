@@ -1,0 +1,19 @@
+{
+	"name": "spoold-dir",
+	"config": {
+		"tasks.max": "1",
+		"connector.class": "com.amaris.kafka.connect.spooldir.SpoolDirCsvSourceConnector",
+		"finished.path": "/Users/pankaj.pankasin/softwares/kafka/kafka-connect-example/temasek_charts/output",
+		"input.file.pattern": "csv",
+		"error.path": "/Users/pankaj.pankasin/softwares/kafka/kafka-connect-example/temasek_charts/error",
+		"schema.dir": "/Users/pankaj.pankasin/softwares/kafka/kafka-connect-example/temasek_charts",
+		"schema.name": "apple_poc",
+		"topic": "apple_poc",
+		"error.topic": "error_payload",
+		"file.audit.topic": "file_arrival_event",
+		"halt.on.error": "false",
+		"csv.first.row.as.header": "true",
+		"schema.generation.enabled": "true",
+		"input.path": "/Users/pankaj.pankasin/softwares/kafka/kafka-connect-example/temasek_charts/input"
+	}
+}

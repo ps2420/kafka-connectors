@@ -1,0 +1,26 @@
+server:
+  port: 8083
+
+eureka:
+ lease:
+   durationInSeconds: true
+ healthCheck:
+   enabled: true  
+ instance:
+   prefer-ip-address: true
+   hostname: localhost
+   #leaseRenewalIntervalInSeconds: 10
+   #leaseExpirationDurationInSeconds: 20
+   #statusPageUrlPath: /info
+   #healthCheckUrlPath: /health
+   #metadata-map:
+   # management.context-path: /
+ client:
+   registerWithEureka: true
+   registryFetchIntervalSeconds: 5
+   enabled: true
+   leaseRenewalIntervalInSeconds: 5
+   serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+ server:
+   waitTimeInMsWhenSyncEmpty: 0

@@ -1,0 +1,2 @@
+
+{"description":"Device8","schemaText":"{\n   \"type\" : \"record\",\n   \"namespace\" : \"org.apache.iot\",\n   \"name\" : \"Device1\",\n   \"fields\" : [\n      { \"name\" : \"xid\" , \"type\" : \"long\" },\n      { \"name\" : \"name\" , \"type\" : \"string\" },\n      { \"name\" : \"version\" , \"type\" : \"int\" },\n      { \"name\" : \"timestamp\" , \"type\" : \"long\" },\n      { \"name\" : \"make\" , \"type\" : \"string\", \"default\": \"\"}\n   ]\n}"} 

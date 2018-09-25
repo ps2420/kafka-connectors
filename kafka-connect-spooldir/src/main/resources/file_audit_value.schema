@@ -1,0 +1,22 @@
+{
+  "name": "com.temasek.charts.model.value",
+  "type": "STRUCT",
+  "isOptional": false,
+  "fieldSchemas": {
+    "uuid": {
+      "type": "STRING",
+      "isOptional": true
+    },
+    "filename": {
+      "type": "STRING",
+      "isOptional": true
+    },
+    "event": {
+      "type": "STRING" 
+    },
+    "audit_time": {
+      "type": "INT64",
+      "isOptional": true
+    }
+  }
+}

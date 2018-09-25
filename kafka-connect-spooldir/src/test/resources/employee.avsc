@@ -1,0 +1,43 @@
+{
+  "name": "com.temasek.charts.model.value",
+  "type": "STRUCT",
+  "isOptional": false,
+  "fieldSchemas": {
+    "year": {
+      "type": "STRING",
+      "isOptional": true
+    },
+    "channel_inventory_method_estimate": {
+      "type": "STRING",
+      "isOptional": true
+    },
+    "google_trends_estimate": {
+      "type": "STRING",
+      "isOptional": true
+    },
+    "replacement_cycle_estimate": {
+      "type": "STRING",
+      "isOptional": true
+    },
+    "arima_pegatron_tsm": {
+      "type": "STRING",
+      "isOptional": true
+    },
+    "arima_pegatron": {
+      "type": "STRING",
+      "isOptional": true
+    },
+    "arima_tsm": {
+      "type": "STRING",
+      "isOptional": true
+    },
+    "average": {
+      "type": "STRING",
+      "isOptional": true
+    },
+    "actual": {
+      "type": "STRING",
+      "isOptional": true
+    }
+  }
+}

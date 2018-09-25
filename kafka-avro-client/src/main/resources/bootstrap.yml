@@ -1,0 +1,20 @@
+management:
+  security:
+    enabled: false
+    
+spring:
+  application:
+    name: config-server
+        
+security:
+  ignored: /**
+  basic:
+    enabled: false
+    
+endpoints:
+  jmx:
+    enabled: false
+    
+info:
+  version: ${APP_VERSION}
+  name: ${spring.application.name}                

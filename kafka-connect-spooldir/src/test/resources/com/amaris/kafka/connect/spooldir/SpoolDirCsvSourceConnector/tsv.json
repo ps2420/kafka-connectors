@@ -1,0 +1,12 @@
+{
+  "name": "TSV input file",
+  "description": "This example will read a tab separated file. This method is very similar to reading a standard CSV file.",
+  "config": {
+    "finished.path": "/tmp",
+    "input.path": "/tmp",
+    "error.path": "/tmp",
+    "input.file.pattern": "^users\\d+\\.tsv",
+    "topic": "users",
+    "csv.separator.char": 11
+  }
+}

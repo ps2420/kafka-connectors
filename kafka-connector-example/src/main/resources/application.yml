@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+management:
+  security:
+    enabled: false
+    
+---
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: classpath:shared/
+         

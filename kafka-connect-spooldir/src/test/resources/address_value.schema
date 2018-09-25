@@ -1,0 +1,31 @@
+{
+  "name": "com.amaris.address.model.value",
+  "type": "STRUCT",
+  "isOptional": false,
+  "fieldSchemas": {
+    "count": {
+      "type": "STRING",
+      "isOptional": true
+    },
+    "order_id": {
+      "type": "STRING",
+      "isOptional": true
+    },
+    "normalized_transaction_date": {
+      "type": "STRING",
+      "isOptional": true
+    },
+    "start_time": {
+      "type": "STRING",
+      "isOptional": true
+    },
+    "source_address": {
+      "type": "STRING",
+      "isOptional": true
+    },
+    "destination_address": {
+      "type": "STRING",
+      "isOptional": true
+    }
+  }
+}

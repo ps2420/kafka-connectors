@@ -1,0 +1,67 @@
+#!/groovy
+
+import java.text.SimpleDateFormat;
+
+import java.util.Date;
+
+node('master') {
+
+  echo "Hello world! I am node ${env.NODE_NAME}"
+  def tag_version
+  def app_name = "kafka-connect-spooldir"
+
+
+  def dateFormat = new SimpleDateFormat("YYYY.MM.dd.HH.mm");
+  //dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+  def today = new Date();
+  tag_version = dateFormat.format(today);
+
+
+  stage('User inputs') {
+    timeout(10) {
+       tag_version = input(id: 'version', message: 'Input binary version u want to release! ', ok: 'Ok', 
+        parameters: [string(defaultValue: "${tag_version}", description: '', name: 'version')])
+ 
+    }
+ }
+
+ echo "tag_version : $tag_version"
+
+ deleteDir()
+
+ stage('Source checkout') {
+   checkout scm
+ }
+
+ stage('Maven build') {
+    sh "echo running command: mvn clean install -Dmaven.test.skip=true --batch-mode versions:set -DreleaseVersion=${tag_version}  -DdevelopmentVersion=${tag_version} -DnewVersion=${tag_version}"
+    sh "mvn clean install -Dmaven.test.skip=true --batch-mode versions:set -DreleaseVersion=${tag_version}  -DdevelopmentVersion=${tag_version} -DnewVersion=${tag_version}"
+ }
+ 
+
+ stage ('Prepare package') {
+    sh 'mkdir package'
+    sh 'rm -rf package'
+    sh 'mkdir package'
+    sh "echo app_name=${app_name}"
+    sh "cp target/${app_name}-0.0.1-SNAPSHOT.jar package/${app_name}-${tag_version}.jar"
+    sh "tar cvf ${app_name}-${tag_version}.tar.gz ./package"
+ }
+
+ stage ('pipeline stash repo') {
+   stash name: 'source-repo'
+ }
+ 
+
+ stage ('clean workspace and unstash source') {
+   deleteDir()
+   unstash 'source-repo'
+ }
+
+ stage ('build image') {
+    sh 'eval "$(docker-machine env default)"'
+    docker.build("${app_name}:${tag_version}", "--build-arg tag_version=${tag_version} --build-arg app_name=${app_name} --no-cache .")
+    //#
+ } 
+
+}

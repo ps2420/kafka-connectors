@@ -1,0 +1,11 @@
+{
+    "name" : "com.amaris.address.model.key",
+    "type" : "STRUCT",
+    "isOptional" : false,
+    "fieldSchemas" : {
+      "order_id" : {
+        "type" : "double",
+        "isOptional" : false
+      }
+    }
+  }

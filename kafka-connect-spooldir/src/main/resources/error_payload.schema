@@ -1,0 +1,19 @@
+{
+  "name": "com.temasek.error.payload.value",
+  "type": "STRUCT",
+  "isOptional": false,
+  "fieldSchemas": {
+    "uuid": {
+      "type": "STRING",
+      "isOptional": true
+    },
+    "topic": {
+      "type": "STRING",
+      "isOptional": true
+    },
+    "payload": {
+      "type": "STRING",
+      "isOptional": true
+    }
+  }
+}

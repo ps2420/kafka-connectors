@@ -1,0 +1,43 @@
+{
+ "type": "record",
+ "namespace": "com.temasek.apple.poc.chart",
+ "name": "applepoc",
+ "fields": [
+  {
+   "name": "year",
+   "type": "string"
+  },
+  {
+   "name": "channel_inventory_method_estimate",
+   "type": "string"
+  },
+  {
+   "name": "google_trends_estimate",
+   "type": "string"
+  },
+  {
+   "name": "replacement_cycle_estimate",
+   "type": "string"
+  },
+  {
+   "name": "arima_pegatron_tsm",
+   "type": "string"
+  },
+  {
+   "name": "arima_pegatron",
+   "type": "string"
+  },
+  {
+   "name": "arima_tsm",
+   "type": "string"
+  },
+  {
+   "name": "average",
+   "type": "string"
+  },
+  {
+   "name": "actual",
+   "type": "string"
+  }
+ ]
+}
